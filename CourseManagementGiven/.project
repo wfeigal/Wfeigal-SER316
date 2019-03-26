@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Wfeigal_CodeReview.doc</name>
+			<type>1</type>
+			<location>C:/Users/Bill Feigal/git/Wfeigal-SER316/CourseManagementGiven/Wfeigal_CodeReview.doc</location>
+		</link>
+	</linkedResources>
 </projectDescription>
