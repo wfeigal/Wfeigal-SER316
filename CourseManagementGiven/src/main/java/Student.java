@@ -31,11 +31,6 @@ public class Student {
     public Major getMajor() {
         return major;
     }
-    
-    public boolean Register_forCourse(Course course) {
-      course.addStudent(this);
-      return courses.add(course);
-  }
 
     public void setMajor(Major major) {
         this.major = major;
@@ -49,6 +44,10 @@ public class Student {
         this.overall_grade = overall_grade;
     }
     
+    public boolean Register_forCourse(Course course) {
+        course.addStudent(this);
+        return courses.add(course);
+    }
     
 
 
