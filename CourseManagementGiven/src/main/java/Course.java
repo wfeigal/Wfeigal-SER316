@@ -51,9 +51,9 @@ public class Course {
          int counter = 0;
          int min = 0;
          int max = 0;
-         if(collection.size() == 1)
+        if(collection.size() == 1) {
             return collection.get(0);
-        
+        }
         else if(collection.size() == 2 ){
             return (double)(collection.get(0) + collection.get(1))/2;
         }
