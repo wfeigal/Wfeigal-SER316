@@ -49,8 +49,8 @@ public class Course {
         ArrayList<Integer> collection = new ArrayList<Integer>(points.values());
         
          int counter = 0;
-         int min = Integer.MAX_VALUE;
-         int max = Integer.MIN_VALUE;
+         int min = 0;
+         int max = 0;
          if(collection.size() == 1)
             return collection.get(0);
         
