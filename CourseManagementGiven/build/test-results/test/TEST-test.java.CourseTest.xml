@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.java.CourseTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-03-30T14:02:00" hostname="HomeDesktop" time="0.018">
+  <properties/>
+  <testcase name="DuplicateStudent" classname="test.java.CourseTest" time="0.007"/>
+  <testcase name="TwoStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="NoStudent" classname="test.java.CourseTest" time="0.008"/>
+  <testcase name="ThreeStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="SingleStudent" classname="test.java.CourseTest" time="0.001"/>
+  <testcase name="NegativeStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="SetPoint" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="AddStudent" classname="test.java.CourseTest" time="0.0"/>
+  <system-out><![CDATA[20
+20
+90
+65
+20
+30
+10
+62
+90
+50
+10
+75
+90
+-10
+20
+20
+{Bambi=20}
+20
+50
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

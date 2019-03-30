@@ -13,8 +13,12 @@ import java.util.HashMap;
 
 
 public class Course {
-    
-    public HashMap<String, Integer> points = new HashMap<>(); // maps student names (asurite) to their points
+	//SER-316 Start
+    private HashMap<String, Integer> points = new HashMap<>(); // maps student names (asurite) to their points
+    //SER-316 End - member variables should be private
+    //SER-316 Start
+    private ArrayList<Student> students  = new ArrayList<Student>();
+    //SER-316 End - member variables should be private, and declared at the beginning of the class
     private String Name; // course name
 
 
@@ -49,8 +53,10 @@ public class Course {
         ArrayList<Integer> collection = new ArrayList<Integer>(points.values());
         
          int counter = 0;
-         int min = 0;
-         int max = 0;
+         //SER-316 Start
+         int min = Integer.MAX_VALUE;
+         int max = Integer.MIN_VALUE;
+         //SER-316 End - needed to inialize variable to large and small numbers
         if(collection.size() == 1) {
             return collection.get(0);
         }
@@ -61,8 +67,9 @@ public class Course {
             int allPoints = 0;
             for(int point: collection){
                 if (point >= 0) {
-                    
-                    counter = counter++;
+                	//SER-316 Start
+                    counter++;
+                    //SER-316 End - fixed so that the counter variable would increment properly
                     if (point < min){
                         min = point;
                     }
@@ -74,7 +81,10 @@ public class Course {
             }
             
             int totalPoints = allPoints-max-min;
-                return totalPoints/(double)(counter-1); 
+            //SER-316 Start
+            return totalPoints/(double)(counter-2); 
+            //SER-316 End - the denominator needs to be -2, since two values are removed from the list
+            //when removing min and max
 
         }
     }
@@ -84,16 +94,23 @@ public class Course {
     // sets points for a student 
     public void set_points(String name, int points) {
     	System.out.println(points);
+    	//SER-316 Start
+    	Student test = new Student(name, Major.CS);
+    	if (!students.contains(test)){
+    		addStudent(test);
+    	}
+    	//SER-316 End - This method should be checking if a student exists and adding if it doesn't
         this.points.put(name, points);
     }
     
     
     // REACH at least 95% Code coverage  (assign 3)
     // Students should only be added when they are not yet in the course (names (asurite member) needs to be unique)
-    ArrayList<Student> students  = new ArrayList<Student>();
     public boolean addStudent(Student s) {
-        students.add(s);
-        points.put(s.getAsurite(), -1);
+    	students.add(s);
+    	//SER-316 Start
+        //DELETE THIS LINE -- points.put(s.getAsurite(), -1);
+        //SER-316 End - This method should not add points, only add a student to the collection
         return true;
     }
 
