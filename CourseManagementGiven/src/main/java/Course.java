@@ -51,17 +51,39 @@ public class Course {
     // if just one or two values no values will be omitted
     public double calculateAverageWithoutMinWithoutMax() throws NullPointerException {
         ArrayList<Integer> collection = new ArrayList<Integer>(points.values());
-        
-         int counter = 0;
-         //SER-316 Start
-         int min = Integer.MAX_VALUE;
-         int max = Integer.MIN_VALUE;
-         //SER-316 End - needed to inialize variable to large and small numbers
+        int count = 0;
+        int counter = 0;
+        //SER-316 Start
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        //SER-316 End - needed to initialize variable to large and small numbers - 
+        //also organized variables to fit code standards
+        //SER-316 Start
+        for(int p: collection){
+        	if (p >=0) {
+        		count++;
+        	}
+        }
+        if(count == 0 || collection.size() == 0) {
+        	throw new NullPointerException();
+        }
+        //SER-316 End - needed to operate based on the number of positive values, to ensure 
+        //enough positive values exist to work with
+
         if(collection.size() == 1) {
-            return collection.get(0);
+        	return collection.get(0);
         }
         else if(collection.size() == 2 ){
-            return (double)(collection.get(0) + collection.get(1))/2;
+        	//SER-316 Start
+        	if (collection.get(0) >= 0 && collection.get(1) >= 0) {
+        		return (double)(collection.get(0) + collection.get(1))/2;
+        	}else if (collection.get(0) >= 0) {
+        		return (double)collection.get(0);
+        	}else {
+        		return (double)collection.get(1);
+        	}
+        	//SER-316 End - method needs to make sure both values are positive, 
+        	//and return the single value if only one is positive
         }
         else {
             int allPoints = 0;
@@ -87,6 +109,7 @@ public class Course {
             //when removing min and max
 
         }
+		
     }
     
     // REACH at least 95% Code coverage  (assign 3)

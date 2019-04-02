@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.CourseTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-03-30T14:02:00" hostname="HomeDesktop" time="0.018">
+<testsuite name="test.java.CourseTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2019-04-02T00:13:38" hostname="HomeDesktop" time="0.019">
   <properties/>
-  <testcase name="DuplicateStudent" classname="test.java.CourseTest" time="0.007"/>
-  <testcase name="TwoStudent" classname="test.java.CourseTest" time="0.0"/>
-  <testcase name="NoStudent" classname="test.java.CourseTest" time="0.008"/>
+  <testcase name="TwoStudentOneNeg2" classname="test.java.CourseTest" time="0.007"/>
+  <testcase name="TwoStudentOneNeg" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="SingleNegStudent" classname="test.java.CourseTest" time="0.007"/>
+  <testcase name="DuplicateStudent" classname="test.java.CourseTest" time="0.001"/>
+  <testcase name="ThreeNegStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="TwoStudent" classname="test.java.CourseTest" time="0.001"/>
+  <testcase name="TwoNegStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="NoStudent" classname="test.java.CourseTest" time="0.0"/>
   <testcase name="ThreeStudent" classname="test.java.CourseTest" time="0.0"/>
-  <testcase name="SingleStudent" classname="test.java.CourseTest" time="0.001"/>
+  <testcase name="SingleStudent" classname="test.java.CourseTest" time="0.0"/>
   <testcase name="NegativeStudent" classname="test.java.CourseTest" time="0.0"/>
   <testcase name="SetPoint" classname="test.java.CourseTest" time="0.0"/>
   <testcase name="AddStudent" classname="test.java.CourseTest" time="0.0"/>
-  <system-out><![CDATA[20
+  <system-out><![CDATA[60
+-99
+-60
+99
+-50
+20
 20
 90
 65
+-20
+-30
+-40
 20
 30
+-50
+-80
 10
 62
 90

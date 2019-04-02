@@ -23,7 +23,10 @@ import main.java.Student;
 import main.java.Major;
 
 public class CourseTest {
-    Course noStudent, singleStudent, twoStudent, threeStudent, negativeStudent, duplicateStudent, setPoint, addStudent;
+    Course noStudent, singleStudent, twoStudent, threeStudent,
+    negativeStudent, duplicateStudent, setPoint, addStudent, 
+    singleNegStudent, twoStudentOneNeg, twoStudentOneNeg2,
+    twoNegStudent, threeNegStudent;
 
     @Before
     public void setUp() throws Exception {
@@ -40,12 +43,85 @@ public class CourseTest {
         // No Students 
         noStudent = new Course("SER001");
         exception.expect(NullPointerException.class);
-        double ans = threeStudent.calculateAverageWithoutMinWithoutMax();
+        double ans = noStudent.calculateAverageWithoutMinWithoutMax();
+    }
+    /**
+	Method:SingleNegStudent
+	Description: This test checks that the proper exception is thrown with a single negative value 
+     */
+    @Test
+    public void SingleNegStudent() {
+        // Single Negative Student 
+        singleNegStudent = new Course("SER011");
+        singleNegStudent.set_points("Jerry", -50);
+        exception.expect(NullPointerException.class);
+        double ans = singleNegStudent.calculateAverageWithoutMinWithoutMax();
+    }
+    
+    /**
+	Method:TwoNegStudent
+	Description: This test checks that the proper exception is thrown with a two negative values 
+     */
+    @Test
+    public void TwoNegStudent() {
+        // Single Negative Student 
+        twoNegStudent = new Course("SER111");
+        twoNegStudent.set_points("Bunny", -50);
+        twoNegStudent.set_points("Hunny", -80);
+        exception.expect(NullPointerException.class);
+        double ans = twoNegStudent.calculateAverageWithoutMinWithoutMax();
+    }
+    
+    /**
+	Method:ThreeNegStudent
+	Description: This test checks that the proper exception is thrown with three negative values 
+     */
+    @Test
+    public void ThreeNegStudent() {
+        // Single Negative Student 
+        threeNegStudent = new Course("SER011");
+        threeNegStudent.set_points("Babs", -20);
+        threeNegStudent.set_points("Tootsie", -30);
+        threeNegStudent.set_points("Gloria", -40);
+        exception.expect(NullPointerException.class);
+        double ans = threeNegStudent.calculateAverageWithoutMinWithoutMax();
+    }
+    
+    /**
+	Method:TwoStudentOneNeg
+	Description: This test checks that when two students are in a class and one score 
+	is negative the appropriate action is taken
+     */
+    @Test
+    public void TwoStudentOneNeg() {
+        // Two Students
+        twoStudentOneNeg = new Course("SER315");
+        twoStudentOneNeg.set_points("Krystal", -60);
+        twoStudentOneNeg.set_points("Jenny", 99);
+        double ans = twoStudentOneNeg.calculateAverageWithoutMinWithoutMax();
+        assertTrue(ans == 99.0);
+    }
+    
+    /**
+	Method:TwoStudentOneNeg
+	Description: This test checks that when two students are in a class and one score 
+	is negative the appropriate action is taken - added to increase code coverage
+     */
+    @Test
+    public void TwoStudentOneNeg2() {
+        // Two Students
+        twoStudentOneNeg2 = new Course("SER315");
+        twoStudentOneNeg2.set_points("Kiki", 60);
+        twoStudentOneNeg2.set_points("Jaklyn", -99);
+        double ans = twoStudentOneNeg2.calculateAverageWithoutMinWithoutMax();
+        assertTrue(ans == 60.0);
     }
     
     /**
 	Method:SingleStudent
+	#######################
 	Description: This test uses the test sequence #1 in my write up
+	#######################
      */
     @Test
     public void SingleStudent() {
@@ -58,7 +134,9 @@ public class CourseTest {
     
     /**
 	Method:TwoStudent
+	#######################
 	Description: This test uses the test sequence #2 in my write up
+	#######################
      */
     @Test
     public void TwoStudent() {
@@ -72,7 +150,9 @@ public class CourseTest {
     
     /**
 	Method:ThreeStudent
+	#######################
 	Description: This test uses the test sequence #3 in my write up
+	#######################
      */
     @Test
     public void ThreeStudent() {
@@ -87,7 +167,8 @@ public class CourseTest {
     
     /**
 	Method:NegativeStudent
-	Description: This test checks that negative values are excluded from calculation
+	Description: This test checks that negative values are excluded from an otherwise
+	valid calculation
      */
     @Test
     public void NegativeStudent() {
