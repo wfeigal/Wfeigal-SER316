@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="test.java.CourseTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2019-04-02T00:13:38" hostname="HomeDesktop" time="0.019">
+<testsuite name="test.java.CourseTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2019-04-05T00:14:51" hostname="HomeDesktop" time="0.018">
   <properties/>
   <testcase name="TwoStudentOneNeg2" classname="test.java.CourseTest" time="0.007"/>
   <testcase name="TwoStudentOneNeg" classname="test.java.CourseTest" time="0.0"/>
-  <testcase name="SingleNegStudent" classname="test.java.CourseTest" time="0.007"/>
-  <testcase name="DuplicateStudent" classname="test.java.CourseTest" time="0.001"/>
-  <testcase name="ThreeNegStudent" classname="test.java.CourseTest" time="0.0"/>
-  <testcase name="TwoStudent" classname="test.java.CourseTest" time="0.001"/>
-  <testcase name="TwoNegStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="SingleNegStudent" classname="test.java.CourseTest" time="0.006"/>
+  <testcase name="DuplicateStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="ThreeNegStudent" classname="test.java.CourseTest" time="0.001"/>
+  <testcase name="TwoStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="TwoNegStudent" classname="test.java.CourseTest" time="0.001"/>
   <testcase name="NoStudent" classname="test.java.CourseTest" time="0.0"/>
   <testcase name="ThreeStudent" classname="test.java.CourseTest" time="0.0"/>
-  <testcase name="SingleStudent" classname="test.java.CourseTest" time="0.0"/>
+  <testcase name="SingleStudent" classname="test.java.CourseTest" time="0.001"/>
   <testcase name="NegativeStudent" classname="test.java.CourseTest" time="0.0"/>
   <testcase name="SetPoint" classname="test.java.CourseTest" time="0.0"/>
   <testcase name="AddStudent" classname="test.java.CourseTest" time="0.0"/>
