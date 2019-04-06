@@ -6,6 +6,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+
+import main.java.Course;
+import main.java.CourseGrades0;
+import main.java.CourseGrades1;
+import main.java.CourseGrades2;
+import main.java.CourseGrades3;
+import main.java.CourseGrades4;
+import main.java.CourseGrades5;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -14,13 +23,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import main.java.Course;
-import main.java.CourseGrades1;
-import main.java.CourseGrades2;
-import main.java.CourseGrades5;
-import main.java.CourseGrades4;
-import main.java.CourseGrades0;
-import main.java.CourseGrades3;
+
 
 import java.lang.reflect.Constructor;
 
@@ -38,12 +41,12 @@ public class GivenBlackbox {
     @Parameters
     public static Collection<Object[]> courseGradesUnderTest() {
         Object[][] classes = { 
-                // {CourseGrades0.class},
-                // {CourseGrades1.class},
-                // {CourseGrades2.class},
-                //{CourseGrades3.class},
-                {CourseGrades4.class}//,
-                //{CourseGrades5.class}
+                 {CourseGrades0.class},
+                 {CourseGrades1.class},
+                 {CourseGrades2.class},
+                 {CourseGrades3.class},
+                 {CourseGrades4.class},
+                 {CourseGrades5.class}
         };
         return Arrays.asList(classes);
     }
@@ -67,20 +70,20 @@ public class GivenBlackbox {
     Course manyStudent;
     HashMap<String, Integer> manyStudentExpected = new HashMap<String, Integer>();
 
-    Course a_Student;
-    HashMap<String, Integer> a_StudentExpected = new HashMap<String, Integer>();
+    Course astudent;
+    HashMap<String, Integer> astudentExpected = new HashMap<String, Integer>();
 
-    Course b_Student;
-    HashMap<String, Integer> b_StudentExpected = new HashMap<String, Integer>();
+    Course bstudent;
+    HashMap<String, Integer> bstudentExpected = new HashMap<String, Integer>();
 
-    Course c_Student;
-    HashMap<String, Integer> c_StudentExpected = new HashMap<String, Integer>();
+    Course cstudent;
+    HashMap<String, Integer> cstudentExpected = new HashMap<String, Integer>();
 
-    Course d_Student;
-    HashMap<String, Integer> d_StudentExpected = new HashMap<String, Integer>();
+    Course dstudent;
+    HashMap<String, Integer> dstudentExpected = new HashMap<String, Integer>();
 
-    Course f_Student;
-    HashMap<String, Integer> f_StudentExpected = new HashMap<String, Integer>();
+    Course fstudent;
+    HashMap<String, Integer> fstudentExpected = new HashMap<String, Integer>();
 
     Course oneOfEachStudent;
     HashMap<String, Integer> oneOfEachStudentExpected = new HashMap<String, Integer>();
@@ -142,58 +145,58 @@ public class GivenBlackbox {
         manyStudentExpected.put("F", 2);
 
         //course with only A's
-        a_Student = createCourse("SER100");
-        a_Student.set_points("Alice",100);
+        astudent = createCourse("SER100");
+        astudent.set_points("Alice",100);
         //expected output
-        a_StudentExpected.put("A", 1);
-        a_StudentExpected.put("B", 0);
-        a_StudentExpected.put("C", 0);
-        a_StudentExpected.put("D", 0);
-        a_StudentExpected.put("F", 0);
+        astudentExpected.put("A", 1);
+        astudentExpected.put("B", 0);
+        astudentExpected.put("C", 0);
+        astudentExpected.put("D", 0);
+        astudentExpected.put("F", 0);
 
         //course with only B's
-        b_Student = createCourse("SER165");
-        b_Student.set_points("Alice",100);//to set max points
-        b_Student.set_points("Barry",66);
+        bstudent = createCourse("SER165");
+        bstudent.set_points("Alice",100);//to set max points
+        bstudent.set_points("Barry",66);
         //expected output
-        b_StudentExpected.put("A", 1);
-        b_StudentExpected.put("B", 1);
-        b_StudentExpected.put("C", 0);
-        b_StudentExpected.put("D", 0);
-        b_StudentExpected.put("F", 0);
+        bstudentExpected.put("A", 1);
+        bstudentExpected.put("B", 1);
+        bstudentExpected.put("C", 0);
+        bstudentExpected.put("D", 0);
+        bstudentExpected.put("F", 0);
 
         //course with only C's
-        c_Student = createCourse("SER150");
-        c_Student.set_points("Alice",100);//to set max points
-        c_Student.set_points("Charlie",51);
+        cstudent = createCourse("SER150");
+        cstudent.set_points("Alice",100);//to set max points
+        cstudent.set_points("Charlie",51);
         //expected output
-        c_StudentExpected.put("A", 1);
-        c_StudentExpected.put("B", 0);
-        c_StudentExpected.put("C", 1);
-        c_StudentExpected.put("D", 0);
-        c_StudentExpected.put("F", 0);
+        cstudentExpected.put("A", 1);
+        cstudentExpected.put("B", 0);
+        cstudentExpected.put("C", 1);
+        cstudentExpected.put("D", 0);
+        cstudentExpected.put("F", 0);
 
         //course with only D's
-        d_Student = createCourse("SER135");
-        d_Student.set_points("Alice",100);//to set max points
-        d_Student.set_points("Denise",36);
+        dstudent = createCourse("SER135");
+        dstudent.set_points("Alice",100);//to set max points
+        dstudent.set_points("Denise",36);
         //expected output
-        d_StudentExpected.put("A", 1);
-        d_StudentExpected.put("B", 0);
-        d_StudentExpected.put("C", 0);
-        d_StudentExpected.put("D", 1);
-        d_StudentExpected.put("F", 0);
+        dstudentExpected.put("A", 1);
+        dstudentExpected.put("B", 0);
+        dstudentExpected.put("C", 0);
+        dstudentExpected.put("D", 1);
+        dstudentExpected.put("F", 0);
 
         //course with only F's
-        f_Student = createCourse("SER115");
-        f_Student.set_points("Alice",100);//to set max points
-        f_Student.set_points("Frank",15);
+        fstudent = createCourse("SER115");
+        fstudent.set_points("Alice",100);//to set max points
+        fstudent.set_points("Frank",15);
         //expected output
-        f_StudentExpected.put("A", 1);
-        f_StudentExpected.put("B", 0);
-        f_StudentExpected.put("C", 0);
-        f_StudentExpected.put("D", 0);
-        f_StudentExpected.put("F", 1);
+        fstudentExpected.put("A", 1);
+        fstudentExpected.put("B", 0);
+        fstudentExpected.put("C", 0);
+        fstudentExpected.put("D", 0);
+        fstudentExpected.put("F", 1);
 
         //course with all letter grades
         oneOfEachStudent = createCourse("SER222");
@@ -271,7 +274,7 @@ public class GivenBlackbox {
     }
 
     @Test 
-    public void manyStudent(){
+    public void manyStudent() {
         System.out.println("Many Student Test");
         HashMap<String, Integer> ans = manyStudent.countOccurencesLetterGrades();
         System.out.println(ans);
@@ -280,52 +283,52 @@ public class GivenBlackbox {
 
 
     @Test 
-    public void a_Student(){
+    public void astudent() {
         System.out.println("A Student Test");
-        HashMap<String, Integer> ans = a_Student.countOccurencesLetterGrades();
+        HashMap<String, Integer> ans = astudent.countOccurencesLetterGrades();
         System.out.println(ans);
-        assertTrue(ans.equals(a_StudentExpected));
+        assertTrue(ans.equals(astudentExpected));
     }
 
 
     @Test 
-    public void b_Student(){
+    public void bstudent() {
         System.out.println("B Student Test");
-        HashMap<String, Integer> ans = b_Student.countOccurencesLetterGrades();
+        HashMap<String, Integer> ans = bstudent.countOccurencesLetterGrades();
         System.out.println(ans);
-        assertTrue(ans.equals(b_StudentExpected));
+        assertTrue(ans.equals(bstudentExpected));
     }
 
 
     @Test 
-    public void c_Student(){
+    public void cstudent() {
         System.out.println("C Student Test");
-        HashMap<String, Integer> ans = c_Student.countOccurencesLetterGrades();
+        HashMap<String, Integer> ans = cstudent.countOccurencesLetterGrades();
         System.out.println(ans);
-        assertTrue(ans.equals(c_StudentExpected));
+        assertTrue(ans.equals(cstudentExpected));
     }
 
 
     @Test 
-    public void d_Student(){
+    public void dstudent() {
         System.out.println("D Student Test");
-        HashMap<String, Integer> ans = d_Student.countOccurencesLetterGrades();
+        HashMap<String, Integer> ans = dstudent.countOccurencesLetterGrades();
         System.out.println(ans);
-        assertTrue(ans.equals(d_StudentExpected));
+        assertTrue(ans.equals(dstudentExpected));
     }
 
 
     @Test 
-    public void f_Student(){
+    public void fstudent() {
         System.out.println("F Student Test");
-        HashMap<String, Integer> ans = f_Student.countOccurencesLetterGrades();
+        HashMap<String, Integer> ans = fstudent.countOccurencesLetterGrades();
         System.out.println(ans);
-        assertTrue(ans.equals(f_StudentExpected));
+        assertTrue(ans.equals(fstudentExpected));
     }
 
 
     @Test 
-    public void oneOfEachStudent(){
+    public void oneOfEachStudent() {
         System.out.println("One Of Each Student Test");
         HashMap<String, Integer> ans = oneOfEachStudent.countOccurencesLetterGrades();
         System.out.println(ans);
@@ -334,7 +337,7 @@ public class GivenBlackbox {
 
 
     @Test 
-    public void highValues(){
+    public void highValues() {
         System.out.println("High Value Test");
         HashMap<String, Integer> ans = highValues.countOccurencesLetterGrades();
         System.out.println(ans);
@@ -343,7 +346,7 @@ public class GivenBlackbox {
 
 
     @Test 
-    public void zeroValues(){
+    public void zeroValues() {
         System.out.println("Zero Value Test");
         HashMap<String, Integer> ans = zeroValues.countOccurencesLetterGrades();
         System.out.println(ans);
@@ -351,7 +354,7 @@ public class GivenBlackbox {
     }
 
     @Test 
-    public void negativeValues(){
+    public void negativeValues() {
         System.out.println("Negative Value Test");
         HashMap<String, Integer> ans = negativeValues.countOccurencesLetterGrades();
         System.out.println(ans);

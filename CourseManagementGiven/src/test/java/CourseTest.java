@@ -1,9 +1,9 @@
 /*
-	File:CourseTest.Java
-	Author:Bill Feigal
-	Date:3/29/19
-	Description:Tests for the calculateAverageWithoutMinWithoutMax() method
-	within Course.Java
+    File:CourseTest.Java
+    Author:Bill Feigal
+    Date:3/29/19
+    Description:Tests for the calculateAverageWithoutMinWithoutMax() method
+    within Course.Java
  */
 
 package test.java;
@@ -23,18 +23,27 @@ import main.java.Student;
 import main.java.Major;
 
 public class CourseTest {
-    Course noStudent , singleStudent , twoStudent , threeStudent ,
-        negativeStudent , duplicateStudent , setPoint , addStudent , 
-        singleNegStudent , twoStudentOneNeg , twoStudentOneNeg2 ,
-        twoNegStudent , threeNegStudent;
+    Course noStudent;
+    Course singleStudent;
+    Course twoStudent;
+    Course threeStudent;
+    Course negativeStudent;
+    Course duplicateStudent;
+    Course setPoint;
+    Course addStudent;
+    Course singleNegStudent;
+    Course twoStudentOneNeg;
+    Course twoStudentOneNeg2;
+    Course twoNegStudent;
+    Course threeNegStudent;
 
     @Before
     public void setUp() throws Exception {
     }
 
     /**
-	Method:NoStudent.
-	Description: This test checks that the proper exception is thrown with no students 
+    Method:NoStudent.
+    Description: This test checks that the proper exception is thrown with no students 
      */
     @Rule
     public final ExpectedException exception = ExpectedException.none();
@@ -46,8 +55,8 @@ public class CourseTest {
         double ans = noStudent.calculateAverageWithoutMinWithoutMax();
     }
     /**
-	Method:SingleNegStudent.
-	Description: This test checks that the proper exception is thrown with a single negative value 
+    Method:SingleNegStudent.
+    Description: This test checks that the proper exception is thrown with a single negative value 
      */
     @Test
     public void singleNegStudent() {
@@ -59,8 +68,8 @@ public class CourseTest {
     }
 
     /**
-	Method:TwoNegStudent.
-	Description: This test checks that the proper exception is thrown with a two negative values 
+    Method:TwoNegStudent.
+    Description: This test checks that the proper exception is thrown with a two negative values 
      */
     @Test
     public void twoNegStudent() {
@@ -73,8 +82,8 @@ public class CourseTest {
     }
 
     /**
-	Method:ThreeNegStudent.
-	Description: This test checks that the proper exception is thrown with three negative values 
+    Method:ThreeNegStudent.
+    Description: This test checks that the proper exception is thrown with three negative values 
      */
     @Test
     public void threeNegStudent() {
@@ -88,9 +97,9 @@ public class CourseTest {
     }
 
     /**
-	Method:TwoStudentOneNeg.
-	Description: This test checks that when two students are in a class and one score 
-	is negative the appropriate action is taken
+    Method:TwoStudentOneNeg.
+    Description: This test checks that when two students are in a class and one score 
+    is negative the appropriate action is taken
      */
     @Test
     public void twoStudentOneNeg() {
@@ -103,9 +112,9 @@ public class CourseTest {
     }
 
     /**
-	Method:TwoStudentOneNeg.
-	Description: This test checks that when two students are in a class and one score 
-	is negative the appropriate action is taken - added to increase code coverage
+    Method:TwoStudentOneNeg.
+    Description: This test checks that when two students are in a class and one score 
+    is negative the appropriate action is taken - added to increase code coverage
      */
     @Test
     public void twoStudentOneNeg2() {
@@ -118,10 +127,10 @@ public class CourseTest {
     }
 
     /**
-	Method:SingleStudent.
-	#######################
-	Description: This test uses the test sequence #1 in my write up
-	#######################
+    Method:SingleStudent.
+    #######################
+    Description: This test uses the test sequence #1 in my write up
+    #######################
      */
     @Test
     public void singleStudent() {
@@ -133,10 +142,10 @@ public class CourseTest {
     }
 
     /**
-	Method:TwoStudent.
-	#######################
-	Description: This test uses the test sequence #2 in my write up
-	#######################
+    Method:TwoStudent.
+    #######################
+    Description: This test uses the test sequence #2 in my write up
+    #######################
      */
     @Test
     public void twoStudent() {
@@ -149,10 +158,10 @@ public class CourseTest {
     }
 
     /**
-	Method:ThreeStudent.
-	#######################
-	Description: This test uses the test sequence #3 in my write up
-	#######################
+    Method:ThreeStudent.
+    #######################
+    Description: This test uses the test sequence #3 in my write up
+    #######################
      */
     @Test
     public void threeStudent() {
@@ -166,9 +175,9 @@ public class CourseTest {
     }
 
     /**
-	Method:NegativeStudent.
-	Description: This test checks that negative values are excluded from an otherwise
-	valid calculation
+    Method:NegativeStudent.
+    Description: This test checks that negative values are excluded from an otherwise
+    valid calculation
      */
     @Test
     public void negativeStudent() {
@@ -183,8 +192,8 @@ public class CourseTest {
     }
 
     /**
-	Method:duplicateStudent.
-	Description: This test checks that duplicate values are handled correctly
+    Method:duplicateStudent.
+    Description: This test checks that duplicate values are handled correctly
      */
     @Test
     public void duplicateStudent() {
@@ -199,8 +208,8 @@ public class CourseTest {
     }
 
     /**
-	Method:SetPoint.
-	Description: This test checks the set_points method works appropriately 
+    Method:SetPoint.
+    Description: This test checks the set_points method works appropriately 
      */
     @Test
     public void setPoint() {
@@ -217,8 +226,8 @@ public class CourseTest {
     }
 
     /**
-	Method:AddStudent.
-	Description: This test checks the addStudent method works appropriately 
+    Method:AddStudent.
+    Description: This test checks the addStudent method works appropriately 
      */
     @Test
     public void addStudent() {
