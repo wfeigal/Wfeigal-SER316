@@ -1,5 +1,3 @@
 before_install: cd CourseManagementGiven 
-before_install:
-- chmod=+x gradlew
 language: java
 jdk: openjdk11
