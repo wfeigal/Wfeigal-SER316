@@ -27,11 +27,11 @@ public class Course {
         this.SetName(name);
     }
 
-    public String GetName() {
+    public String getName() {
         return name;
     }
 
-    public void SetName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -73,14 +73,13 @@ public class Course {
 
         if (collection.size() == 1) {
             return collection.get(0);
-        }
-        else if (collection.size() == 2 ) {
+        } else if (collection.size() == 2) {
             //SER-316 Start
             if (collection.get(0) >= 0 && collection.get(1) >= 0) {
                 return (double)(collection.get(0) + collection.get(1)) / 2;
-            }else if (collection.get(0) >= 0) {
+            } else if (collection.get(0) >= 0) {
                 return (double)collection.get(0);
-            }else {
+            } else {
                 return (double)collection.get(1);
             }
             //SER-316 End - method needs to make sure both values are positive, 
@@ -105,17 +104,17 @@ public class Course {
 
             int totalPoints = allPoints - max - min;
             //SER-316 Start
-            return totalPoints/(double)(counter-2); 
-            //SER-316 End - the denominator needs to be -2, since two values are removed from the list
-            //when removing min and max
+            return totalPoints / (double)(counter - 2); 
+            //SER-316 End - the denominator needs to be -2, since two values are removed 
+            //from the list when removing min and max
 
         }
 
     }
 
     // REACH at least 95% Code coverage  (assign 3)
-    // if student with the name (asurite member) is not yet included student needs to be added to student list 
-    // sets points for a student 
+    // if student with the name (asurite member) is not yet included student  
+    // needs to be added to student list sets points for a student 
     public void set_points(String name, int points) {
         System.out.println(points);
         //SER-316 Start
@@ -140,7 +139,7 @@ public class Course {
     }
 
 
-    public HashMap<String, Integer> GetPoints() {
+    public HashMap<String, Integer> getPoints() {
         return points;
     }
 
@@ -154,11 +153,11 @@ public class Course {
     }
 
 
-    public ArrayList<Student> getStudents(){
+    public ArrayList<Student> getStudents() {
         return students;
     }
 
-    public HashMap<String, Integer> countOccurencesLetterGrades() throws NullPointerException{
+    public HashMap<String, Integer> countOccurencesLetterGrades() throws NullPointerException {
         return null;
 
     }

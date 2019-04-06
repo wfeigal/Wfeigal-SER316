@@ -26,8 +26,9 @@ public class Main {
         courses.put("SER315", new CourseGrades0("SER315"));
         courses.put("SC232", new CourseGrades0("CS232"));
 
-        Integer marksRose ;
-        System.out.println("Anna has scored " + new Integer(40).toString() + " marks which makes her the topper.");
+        Integer marksRose;
+        System.out.println("Anna has scored " + new Integer(40).toString() + 
+                " marks which makes her the topper.");
         courses.get("SER315").set_points("anna", 40);
         courses.get("SER315").set_points("harry", 20);
         courses.get("SER315").set_points("aneesh", 30);
