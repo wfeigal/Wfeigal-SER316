@@ -11,7 +11,7 @@ public class Student {
     private Major major;
     private double overallGrade;
     private ArrayList<Course> courses = new ArrayList<Course>();
-    private ArrayList<Course> Courses2 = null;
+    //SER316 TASK 2 SPOTBUGS FIX - removed unused variable Courses2
 
     public Student(String asurite, Major major) {
         this.setAsurite(asurite);

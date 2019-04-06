@@ -37,8 +37,7 @@ public class Course {
 
 
     public void printCourseStats() {
-        ArrayList<Integer> values = new ArrayList<Integer>(points.values());
-
+        //SER316 TASK 2 SPOTBUGS FIX - removed unused local variable
         System.out.print("Average Grades without max and without min: ");
         System.out.println(this.calculateAverageWithoutMinWithoutMax());
     }

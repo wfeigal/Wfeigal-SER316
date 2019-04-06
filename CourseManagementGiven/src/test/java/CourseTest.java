@@ -52,7 +52,8 @@ public class CourseTest {
         // No Students 
         noStudent = new Course("SER001");
         exception.expect(NullPointerException.class);
-        double ans = noStudent.calculateAverageWithoutMinWithoutMax();
+      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        noStudent.calculateAverageWithoutMinWithoutMax();
     }
     /**
     Method:SingleNegStudent.
@@ -64,7 +65,8 @@ public class CourseTest {
         singleNegStudent = new Course("SER011");
         singleNegStudent.set_points("Jerry", -50);
         exception.expect(NullPointerException.class);
-        double ans = singleNegStudent.calculateAverageWithoutMinWithoutMax();
+      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        singleNegStudent.calculateAverageWithoutMinWithoutMax();
     }
 
     /**
@@ -78,7 +80,7 @@ public class CourseTest {
         twoNegStudent.set_points("Bunny", -50);
         twoNegStudent.set_points("Hunny", -80);
         exception.expect(NullPointerException.class);
-        double ans = twoNegStudent.calculateAverageWithoutMinWithoutMax();
+        twoNegStudent.calculateAverageWithoutMinWithoutMax();
     }
 
     /**
@@ -93,7 +95,8 @@ public class CourseTest {
         threeNegStudent.set_points("Tootsie", -30);
         threeNegStudent.set_points("Gloria", -40);
         exception.expect(NullPointerException.class);
-        double ans = threeNegStudent.calculateAverageWithoutMinWithoutMax();
+      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        threeNegStudent.calculateAverageWithoutMinWithoutMax();
     }
 
     /**
@@ -204,7 +207,9 @@ public class CourseTest {
         duplicateStudent.set_points("Tiffany", 90);
         duplicateStudent.set_points("Brandy", 65);
         double ans = duplicateStudent.calculateAverageWithoutMinWithoutMax();
-        assertTrue(ans == 42.5);
+        //SER316 TASK 2 SPOTBUGS FIX - Changed the assertion statement to 
+        //be appropriate for floating point comaprisons
+        assertTrue( Math.abs(42.5 - ans) < .0000001 );
     }
 
     /**
@@ -214,13 +219,14 @@ public class CourseTest {
     @Test
     public void setPoint() {
         // checks that student name and score is stored correctly
-        HashMap<String, Integer> test = new HashMap<>();
+        //SER316 TASK 2 SPOTBUGS FIX - removed declaration of hashmap and 
+        //just used an assignment statement below
         HashMap<String, Integer> control = new HashMap<>();
         control.put("Bambi", 20);
         setPoint = new Course("SER999");
         setPoint.set_points("Bambi", 20);
         setPoint.set_points("Bambi", 20);//Bambi should only be added once
-        test = setPoint.getPoints();
+        HashMap<String, Integer> test = setPoint.getPoints();
         System.out.println(test.toString());
         assertTrue(test.equals(control));
     }
@@ -232,12 +238,13 @@ public class CourseTest {
     @Test
     public void addStudent() {
         // checks that student object is stored correctly
-        ArrayList<Student> test  = new ArrayList<Student>();
+        //SER316 TASK 2 SPOTBUGS FIX - removed declaration of ArrayList and 
+        //just used an assignment statement below
         Student s = new Student("Chloe", Major.CS);
         addStudent = new Course("SER215");
         addStudent.set_points("Chloe", 20);
         addStudent.set_points("Chloe", 50);
-        test = addStudent.getStudents();
+        ArrayList<Student> test = addStudent.getStudents();
         assertTrue(test.get(0).getAsurite().contentEquals(s.getAsurite()));
     }
 }
