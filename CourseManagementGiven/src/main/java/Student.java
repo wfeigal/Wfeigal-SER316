@@ -9,19 +9,19 @@ import java.util.ArrayList;
 public class Student {
     private String asurite;
     private Major major;
-    private double overall_grade;
+    private double overallGrade;
     private ArrayList<Course> courses = new ArrayList<Course>();
-    private ArrayList<Course> Courses2 = null;
-    
-    public Student(String asurite, Major major){
+    //SER316 TASK 2 SPOTBUGS FIX - removed unused variable Courses2
+
+    public Student(String asurite, Major major) {
         this.setAsurite(asurite);
         this.setMajor(major);
-        setOverall_grade(0);
+        setOverallGrade(0);
 
     }
 
     public String getAsurite() {
-         return asurite;
+        return asurite;
     }
 
     public void setAsurite(String asurite ) {
@@ -36,19 +36,19 @@ public class Student {
         this.major = major;
     }
 
-    public double getOverall_grade(){
-        return overall_grade;
+    public double getOverall_grade() {
+        return overallGrade;
     }
 
-    public void setOverall_grade(double overall_grade) {
-        this.overall_grade = overall_grade;
+    public void setOverallGrade(double overallGrade) {
+        this.overallGrade = overallGrade;
     }
-    
-    public boolean Register_forCourse(Course course) {
+
+    public boolean registerForCourse(Course course) {
         course.addStudent(this);
         return courses.add(course);
     }
-    
+
 
 
 }

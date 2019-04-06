@@ -1,10 +1,10 @@
 /*
-	File:CourseTest.Java
-	Author:Bill Feigal
-	Date:3/29/19
-	Description:Tests for the calculateAverageWithoutMinWithoutMax() method
-	within Course.Java
-*/
+    File:CourseTest.Java
+    Author:Bill Feigal
+    Date:3/29/19
+    Description:Tests for the calculateAverageWithoutMinWithoutMax() method
+    within Course.Java
+ */
 
 package test.java;
 
@@ -23,77 +23,89 @@ import main.java.Student;
 import main.java.Major;
 
 public class CourseTest {
-    Course noStudent, singleStudent, twoStudent, threeStudent,
-    negativeStudent, duplicateStudent, setPoint, addStudent, 
-    singleNegStudent, twoStudentOneNeg, twoStudentOneNeg2,
-    twoNegStudent, threeNegStudent;
+    Course noStudent;
+    Course singleStudent;
+    Course twoStudent;
+    Course threeStudent;
+    Course negativeStudent;
+    Course duplicateStudent;
+    Course setPoint;
+    Course addStudent;
+    Course singleNegStudent;
+    Course twoStudentOneNeg;
+    Course twoStudentOneNeg2;
+    Course twoNegStudent;
+    Course threeNegStudent;
 
     @Before
     public void setUp() throws Exception {
     }
-    
+
     /**
-	Method:NoStudent
-	Description: This test checks that the proper exception is thrown with no students 
+    Method:NoStudent.
+    Description: This test checks that the proper exception is thrown with no students 
      */
     @Rule
     public final ExpectedException exception = ExpectedException.none();
     @Test
-    public void NoStudent() {
+    public void noStudent() {
         // No Students 
         noStudent = new Course("SER001");
         exception.expect(NullPointerException.class);
-        double ans = noStudent.calculateAverageWithoutMinWithoutMax();
+      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        noStudent.calculateAverageWithoutMinWithoutMax();
     }
     /**
-	Method:SingleNegStudent
-	Description: This test checks that the proper exception is thrown with a single negative value 
+    Method:SingleNegStudent.
+    Description: This test checks that the proper exception is thrown with a single negative value 
      */
     @Test
-    public void SingleNegStudent() {
+    public void singleNegStudent() {
         // Single Negative Student 
         singleNegStudent = new Course("SER011");
         singleNegStudent.set_points("Jerry", -50);
         exception.expect(NullPointerException.class);
-        double ans = singleNegStudent.calculateAverageWithoutMinWithoutMax();
+      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        singleNegStudent.calculateAverageWithoutMinWithoutMax();
     }
-    
+
     /**
-	Method:TwoNegStudent
-	Description: This test checks that the proper exception is thrown with a two negative values 
+    Method:TwoNegStudent.
+    Description: This test checks that the proper exception is thrown with a two negative values 
      */
     @Test
-    public void TwoNegStudent() {
+    public void twoNegStudent() {
         // Single Negative Student 
         twoNegStudent = new Course("SER111");
         twoNegStudent.set_points("Bunny", -50);
         twoNegStudent.set_points("Hunny", -80);
         exception.expect(NullPointerException.class);
-        double ans = twoNegStudent.calculateAverageWithoutMinWithoutMax();
+        twoNegStudent.calculateAverageWithoutMinWithoutMax();
     }
-    
+
     /**
-	Method:ThreeNegStudent
-	Description: This test checks that the proper exception is thrown with three negative values 
+    Method:ThreeNegStudent.
+    Description: This test checks that the proper exception is thrown with three negative values 
      */
     @Test
-    public void ThreeNegStudent() {
+    public void threeNegStudent() {
         // Single Negative Student 
         threeNegStudent = new Course("SER011");
         threeNegStudent.set_points("Babs", -20);
         threeNegStudent.set_points("Tootsie", -30);
         threeNegStudent.set_points("Gloria", -40);
         exception.expect(NullPointerException.class);
-        double ans = threeNegStudent.calculateAverageWithoutMinWithoutMax();
+      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        threeNegStudent.calculateAverageWithoutMinWithoutMax();
     }
-    
+
     /**
-	Method:TwoStudentOneNeg
-	Description: This test checks that when two students are in a class and one score 
-	is negative the appropriate action is taken
+    Method:TwoStudentOneNeg.
+    Description: This test checks that when two students are in a class and one score 
+    is negative the appropriate action is taken
      */
     @Test
-    public void TwoStudentOneNeg() {
+    public void twoStudentOneNeg() {
         // Two Students
         twoStudentOneNeg = new Course("SER315");
         twoStudentOneNeg.set_points("Krystal", -60);
@@ -101,14 +113,14 @@ public class CourseTest {
         double ans = twoStudentOneNeg.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 99.0);
     }
-    
+
     /**
-	Method:TwoStudentOneNeg
-	Description: This test checks that when two students are in a class and one score 
-	is negative the appropriate action is taken - added to increase code coverage
+    Method:TwoStudentOneNeg.
+    Description: This test checks that when two students are in a class and one score 
+    is negative the appropriate action is taken - added to increase code coverage
      */
     @Test
-    public void TwoStudentOneNeg2() {
+    public void twoStudentOneNeg2() {
         // Two Students
         twoStudentOneNeg2 = new Course("SER315");
         twoStudentOneNeg2.set_points("Kiki", 60);
@@ -116,30 +128,30 @@ public class CourseTest {
         double ans = twoStudentOneNeg2.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 60.0);
     }
-    
+
     /**
-	Method:SingleStudent
-	#######################
-	Description: This test uses the test sequence #1 in my write up
-	#######################
+    Method:SingleStudent.
+    #######################
+    Description: This test uses the test sequence #1 in my write up
+    #######################
      */
     @Test
-    public void SingleStudent() {
+    public void singleStudent() {
         // One Student
         singleStudent = new Course("SER316");
         singleStudent.set_points("Hanna", 50);
         double ans = singleStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 50.0);
     }
-    
+
     /**
-	Method:TwoStudent
-	#######################
-	Description: This test uses the test sequence #2 in my write up
-	#######################
+    Method:TwoStudent.
+    #######################
+    Description: This test uses the test sequence #2 in my write up
+    #######################
      */
     @Test
-    public void TwoStudent() {
+    public void twoStudent() {
         // Two Students
         twoStudent = new Course("SER315");
         twoStudent.set_points("Kara", 20);
@@ -147,15 +159,15 @@ public class CourseTest {
         double ans = twoStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 25.0);
     }
-    
+
     /**
-	Method:ThreeStudent
-	#######################
-	Description: This test uses the test sequence #3 in my write up
-	#######################
+    Method:ThreeStudent.
+    #######################
+    Description: This test uses the test sequence #3 in my write up
+    #######################
      */
     @Test
-    public void ThreeStudent() {
+    public void threeStudent() {
         // Three Students 
         threeStudent = new Course("SER334");
         threeStudent.set_points("Emerald", 10);
@@ -164,14 +176,14 @@ public class CourseTest {
         double ans = threeStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 62.0);
     }
-    
+
     /**
-	Method:NegativeStudent
-	Description: This test checks that negative values are excluded from an otherwise
-	valid calculation
+    Method:NegativeStudent.
+    Description: This test checks that negative values are excluded from an otherwise
+    valid calculation
      */
     @Test
-    public void NegativeStudent() {
+    public void negativeStudent() {
         // Three Students 
         negativeStudent = new Course("SER334");
         negativeStudent.set_points("Emerald", 10);
@@ -181,13 +193,13 @@ public class CourseTest {
         double ans = negativeStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 75.0);
     }
-    
+
     /**
-	Method:duplicateStudent
-	Description: This test checks that duplicate values are handled correctly
+    Method:duplicateStudent.
+    Description: This test checks that duplicate values are handled correctly
      */
     @Test
-    public void DuplicateStudent() {
+    public void duplicateStudent() {
         // Three Students 
         duplicateStudent = new Course("SER422");
         duplicateStudent.set_points("Crystal", 20);
@@ -195,40 +207,44 @@ public class CourseTest {
         duplicateStudent.set_points("Tiffany", 90);
         duplicateStudent.set_points("Brandy", 65);
         double ans = duplicateStudent.calculateAverageWithoutMinWithoutMax();
-        assertTrue(ans == 42.5);
+        //SER316 TASK 2 SPOTBUGS FIX - Changed the assertion statement to 
+        //be appropriate for floating point comaprisons
+        assertTrue( Math.abs(42.5 - ans) < .0000001 );
     }
-    
+
     /**
-	Method:SetPoint
-	Description: This test checks the set_points method works appropriately 
+    Method:SetPoint.
+    Description: This test checks the set_points method works appropriately 
      */
     @Test
-    public void SetPoint() {
+    public void setPoint() {
         // checks that student name and score is stored correctly
-    	HashMap<String, Integer> test = new HashMap<>();
-    	HashMap<String, Integer> control = new HashMap<>();
-    	control.put("Bambi", 20);
+        //SER316 TASK 2 SPOTBUGS FIX - removed declaration of hashmap and 
+        //just used an assignment statement below
+        HashMap<String, Integer> control = new HashMap<>();
+        control.put("Bambi", 20);
         setPoint = new Course("SER999");
         setPoint.set_points("Bambi", 20);
         setPoint.set_points("Bambi", 20);//Bambi should only be added once
-        test = setPoint.GetPoints();
+        HashMap<String, Integer> test = setPoint.getPoints();
         System.out.println(test.toString());
         assertTrue(test.equals(control));
     }
-    
+
     /**
-	Method:AddStudent
-	Description: This test checks the addStudent method works appropriately 
+    Method:AddStudent.
+    Description: This test checks the addStudent method works appropriately 
      */
     @Test
-    public void AddStudent() {
+    public void addStudent() {
         // checks that student object is stored correctly
-    	ArrayList<Student> test  = new ArrayList<Student>();
-    	Student s = new Student("Chloe", Major.CS);
+        //SER316 TASK 2 SPOTBUGS FIX - removed declaration of ArrayList and 
+        //just used an assignment statement below
+        Student s = new Student("Chloe", Major.CS);
         addStudent = new Course("SER215");
         addStudent.set_points("Chloe", 20);
         addStudent.set_points("Chloe", 50);
-        test = addStudent.getStudents();
+        ArrayList<Student> test = addStudent.getStudents();
         assertTrue(test.get(0).getAsurite().contentEquals(s.getAsurite()));
     }
 }
