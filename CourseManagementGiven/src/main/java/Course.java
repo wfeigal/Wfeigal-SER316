@@ -14,24 +14,25 @@ import java.util.HashMap;
 
 public class Course {
     //SER-316 Start
-    private HashMap<String, Integer> points = new HashMap<>(); // maps student names (asurite) to their points
+    // maps student names (asurite) to their points
+    private HashMap<String, Integer> points = new HashMap<>(); 
     //SER-316 End - member variables should be private
     //SER-316 Start
     private ArrayList<Student> students  = new ArrayList<Student>();
     //SER-316 End - member variables should be private, and declared at the beginning of the class
-    private String Name; // course name
+    private String name; // course name
 
 
-    public Course(String name){
+    public Course(String name) {
         this.SetName(name);
     }
 
     public String GetName() {
-        return Name;
+        return name;
     }
 
     public void SetName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
 
@@ -59,24 +60,24 @@ public class Course {
         //SER-316 End - needed to initialize variable to large and small numbers - 
         //also organized variables to fit code standards
         //SER-316 Start
-        for(int p: collection){
-            if (p >=0) {
+        for (int p: collection) {
+            if (p >= 0) {
                 count++;
             }
         }
-        if(count == 0 || collection.size() == 0) {
+        if (count == 0 || collection.size() == 0) {
             throw new NullPointerException();
         }
         //SER-316 End - needed to operate based on the number of positive values, to ensure 
         //enough positive values exist to work with
 
-        if(collection.size() == 1) {
+        if (collection.size() == 1) {
             return collection.get(0);
         }
-        else if(collection.size() == 2 ){
+        else if (collection.size() == 2 ) {
             //SER-316 Start
             if (collection.get(0) >= 0 && collection.get(1) >= 0) {
-                return (double)(collection.get(0) + collection.get(1))/2;
+                return (double)(collection.get(0) + collection.get(1)) / 2;
             }else if (collection.get(0) >= 0) {
                 return (double)collection.get(0);
             }else {
@@ -87,22 +88,22 @@ public class Course {
         }
         else {
             int allPoints = 0;
-            for(int point: collection){
+            for (int point: collection) {
                 if (point >= 0) {
                     //SER-316 Start
                     counter++;
                     //SER-316 End - fixed so that the counter variable would increment properly
-                    if (point < min){
+                    if (point < min) {
                         min = point;
                     }
-                    if (point > max){
+                    if (point > max) {
                         max = point;
                     }
                     allPoints = allPoints + point;
                 }
             }
 
-            int totalPoints = allPoints-max-min;
+            int totalPoints = allPoints - max - min;
             //SER-316 Start
             return totalPoints/(double)(counter-2); 
             //SER-316 End - the denominator needs to be -2, since two values are removed from the list
@@ -119,7 +120,7 @@ public class Course {
         System.out.println(points);
         //SER-316 Start
         Student test = new Student(name, Major.CS);
-        if (!students.contains(test)){
+        if (!students.contains(test)) {
             addStudent(test);
         }
         //SER-316 End - This method should be checking if a student exists and adding if it doesn't
@@ -128,7 +129,8 @@ public class Course {
 
 
     // REACH at least 95% Code coverage  (assign 3)
-    // Students should only be added when they are not yet in the course (names (asurite member) needs to be unique)
+    // Students should only be added when they are not yet in the course 
+    //(names (asurite member) needs to be unique)
     public boolean addStudent(Student s) {
         students.add(s);
         //SER-316 Start
@@ -138,7 +140,7 @@ public class Course {
     }
 
 
-    public HashMap<String, Integer> GetPoints(){
+    public HashMap<String, Integer> GetPoints() {
         return points;
     }
 
