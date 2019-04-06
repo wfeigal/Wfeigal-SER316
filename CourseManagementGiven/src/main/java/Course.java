@@ -24,7 +24,7 @@ public class Course {
 
 
     public Course(String name) {
-        this.SetName(name);
+        this.setName(name);
     }
 
     public String getName() {

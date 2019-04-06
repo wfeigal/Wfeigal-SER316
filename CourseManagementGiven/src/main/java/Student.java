@@ -40,7 +40,7 @@ public class Student {
         return overallGrade;
     }
 
-    public void setOverall_grade(double overallGrade) {
+    public void setOverallGrade(double overallGrade) {
         this.overallGrade = overallGrade;
     }
 
