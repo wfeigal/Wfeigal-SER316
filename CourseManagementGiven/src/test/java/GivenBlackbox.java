@@ -41,12 +41,12 @@ public class GivenBlackbox {
     @Parameters
     public static Collection<Object[]> courseGradesUnderTest() {
         Object[][] classes = { 
-                 {CourseGrades0.class},
-                 {CourseGrades1.class},
-                 {CourseGrades2.class},
-                 {CourseGrades3.class},
-                 {CourseGrades4.class},
-                 {CourseGrades5.class}
+                {CourseGrades0.class},
+                {CourseGrades1.class},
+                {CourseGrades2.class},
+                {CourseGrades3.class},
+                {CourseGrades4.class},
+                {CourseGrades5.class}
         };
         return Arrays.asList(classes);
     }

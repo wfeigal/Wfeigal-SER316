@@ -24,7 +24,7 @@ public class Student {
         return asurite;
     }
 
-    public void setAsurite(String asurite ) {
+    public void setAsurite(String asurite) {
         this.asurite = asurite;
     }
 

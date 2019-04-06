@@ -13,14 +13,17 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import main.java.Course;
+import main.java.Major;
+import main.java.Student;
+
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import main.java.Course;
-import main.java.Student;
-import main.java.Major;
+
 
 public class CourseTest {
     Course noStudent;
@@ -52,7 +55,7 @@ public class CourseTest {
         // No Students 
         noStudent = new Course("SER001");
         exception.expect(NullPointerException.class);
-      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
         noStudent.calculateAverageWithoutMinWithoutMax();
     }
     /**
@@ -65,7 +68,7 @@ public class CourseTest {
         singleNegStudent = new Course("SER011");
         singleNegStudent.set_points("Jerry", -50);
         exception.expect(NullPointerException.class);
-      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
         singleNegStudent.calculateAverageWithoutMinWithoutMax();
     }
 
@@ -95,7 +98,7 @@ public class CourseTest {
         threeNegStudent.set_points("Tootsie", -30);
         threeNegStudent.set_points("Gloria", -40);
         exception.expect(NullPointerException.class);
-      //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
+        //SER316 TASK 2 SPOTBUGS FIX - removed unused assignment to ans variable
         threeNegStudent.calculateAverageWithoutMinWithoutMax();
     }
 
@@ -209,7 +212,7 @@ public class CourseTest {
         double ans = duplicateStudent.calculateAverageWithoutMinWithoutMax();
         //SER316 TASK 2 SPOTBUGS FIX - Changed the assertion statement to 
         //be appropriate for floating point comaprisons
-        assertTrue( Math.abs(42.5 - ans) < .0000001 );
+        assertTrue(Math.abs(42.5 - ans) < .0000001);
     }
 
     /**
