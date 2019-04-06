@@ -1,0 +1,3 @@
+before_install: cd CourseManagementGiven 
+language: java
+jdk: openjdk11
