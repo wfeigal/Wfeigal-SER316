@@ -4,7 +4,7 @@
 	Date:3/29/19
 	Description:Tests for the calculateAverageWithoutMinWithoutMax() method
 	within Course.Java
-*/
+ */
 
 package test.java;
 
@@ -31,7 +31,7 @@ public class CourseTest {
     @Before
     public void setUp() throws Exception {
     }
-    
+
     /**
 	Method:NoStudent
 	Description: This test checks that the proper exception is thrown with no students 
@@ -57,7 +57,7 @@ public class CourseTest {
         exception.expect(NullPointerException.class);
         double ans = singleNegStudent.calculateAverageWithoutMinWithoutMax();
     }
-    
+
     /**
 	Method:TwoNegStudent
 	Description: This test checks that the proper exception is thrown with a two negative values 
@@ -71,7 +71,7 @@ public class CourseTest {
         exception.expect(NullPointerException.class);
         double ans = twoNegStudent.calculateAverageWithoutMinWithoutMax();
     }
-    
+
     /**
 	Method:ThreeNegStudent
 	Description: This test checks that the proper exception is thrown with three negative values 
@@ -86,7 +86,7 @@ public class CourseTest {
         exception.expect(NullPointerException.class);
         double ans = threeNegStudent.calculateAverageWithoutMinWithoutMax();
     }
-    
+
     /**
 	Method:TwoStudentOneNeg
 	Description: This test checks that when two students are in a class and one score 
@@ -101,7 +101,7 @@ public class CourseTest {
         double ans = twoStudentOneNeg.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 99.0);
     }
-    
+
     /**
 	Method:TwoStudentOneNeg
 	Description: This test checks that when two students are in a class and one score 
@@ -116,7 +116,7 @@ public class CourseTest {
         double ans = twoStudentOneNeg2.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 60.0);
     }
-    
+
     /**
 	Method:SingleStudent
 	#######################
@@ -131,7 +131,7 @@ public class CourseTest {
         double ans = singleStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 50.0);
     }
-    
+
     /**
 	Method:TwoStudent
 	#######################
@@ -147,7 +147,7 @@ public class CourseTest {
         double ans = twoStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 25.0);
     }
-    
+
     /**
 	Method:ThreeStudent
 	#######################
@@ -164,7 +164,7 @@ public class CourseTest {
         double ans = threeStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 62.0);
     }
-    
+
     /**
 	Method:NegativeStudent
 	Description: This test checks that negative values are excluded from an otherwise
@@ -181,7 +181,7 @@ public class CourseTest {
         double ans = negativeStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 75.0);
     }
-    
+
     /**
 	Method:duplicateStudent
 	Description: This test checks that duplicate values are handled correctly
@@ -197,7 +197,7 @@ public class CourseTest {
         double ans = duplicateStudent.calculateAverageWithoutMinWithoutMax();
         assertTrue(ans == 42.5);
     }
-    
+
     /**
 	Method:SetPoint
 	Description: This test checks the set_points method works appropriately 
@@ -205,9 +205,9 @@ public class CourseTest {
     @Test
     public void SetPoint() {
         // checks that student name and score is stored correctly
-    	HashMap<String, Integer> test = new HashMap<>();
-    	HashMap<String, Integer> control = new HashMap<>();
-    	control.put("Bambi", 20);
+        HashMap<String, Integer> test = new HashMap<>();
+        HashMap<String, Integer> control = new HashMap<>();
+        control.put("Bambi", 20);
         setPoint = new Course("SER999");
         setPoint.set_points("Bambi", 20);
         setPoint.set_points("Bambi", 20);//Bambi should only be added once
@@ -215,7 +215,7 @@ public class CourseTest {
         System.out.println(test.toString());
         assertTrue(test.equals(control));
     }
-    
+
     /**
 	Method:AddStudent
 	Description: This test checks the addStudent method works appropriately 
@@ -223,8 +223,8 @@ public class CourseTest {
     @Test
     public void AddStudent() {
         // checks that student object is stored correctly
-    	ArrayList<Student> test  = new ArrayList<Student>();
-    	Student s = new Student("Chloe", Major.CS);
+        ArrayList<Student> test  = new ArrayList<Student>();
+        Student s = new Student("Chloe", Major.CS);
         addStudent = new Course("SER215");
         addStudent.set_points("Chloe", 20);
         addStudent.set_points("Chloe", 50);
